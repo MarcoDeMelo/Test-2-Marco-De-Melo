@@ -1,16 +1,11 @@
 import java.sql.Statement;
 import java.sql.Connection;
-import java.util.ArrayList;
 import java.util.List;
-
-import javax.swing.plaf.synth.SynthStyle;
-
 import daos.CustomerDao;
-
 import java.sql.*;
-import java.sql.ResultSet;
 import entities.Customer;
 import entities.Database;
+//Project By Marco De Melo
 public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");

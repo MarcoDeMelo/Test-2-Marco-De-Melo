@@ -15,7 +15,7 @@ public class CustomerDao implements Dao<Customer, Integer> {
     {
         this.connection = connection;
     }
-
+    //This function is used to display all the customers found in the table. 
     public List<Customer> findAll()
     {
         List<Customer> customers = new ArrayList<Customer>();
@@ -39,7 +39,7 @@ public class CustomerDao implements Dao<Customer, Integer> {
         }
         return customers;
     }
-
+    // This function is used to find a specific customer by their ID 
     public Customer findByID(Integer pk)
     {
         Customer customer = new Customer();
@@ -62,6 +62,7 @@ public class CustomerDao implements Dao<Customer, Integer> {
         }
         return customer;
     }
+    //This function is creating a customer for the mysql table. The keys are calculated automatically
     public void insert(Customer customer)
     {
         try (Statement statement = connection.createStatement())
@@ -84,6 +85,7 @@ public class CustomerDao implements Dao<Customer, Integer> {
             System.err.println(e.getMessage());
         }
     } 
+    //This function is used to update address in the Table. 
     public Boolean update(Customer cutomer)
     {
         Boolean sucess = true;
@@ -100,6 +102,7 @@ public class CustomerDao implements Dao<Customer, Integer> {
         }
         return sucess;
     }
+    //This function uses the pk (ID) to delete any customer. 
     public Boolean delete(Integer pk)
     {
         Boolean success = false;
@@ -114,12 +117,8 @@ public class CustomerDao implements Dao<Customer, Integer> {
         }
         return success;
     }
+   
 
-    @Override
-    public Customer findById(Integer pk) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findById'");
-    }
 }
 
 
